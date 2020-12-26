@@ -8,6 +8,11 @@
  */
 
  // JavaScript Array already contains all above methods, hence can use as a stack.
+ var stack = [];
+    stack.push(2);       // stack is now [2]
+    stack.push(5);       // stack is now [2, 5]
+    var i = stack.pop(); // stack is now [2]
+    alert(i);            // displays 5
  
  // Below is the programatic way of implementing Stack with JavaScript
 
@@ -63,3 +68,4 @@ console.log('myStack pop: ', myStack.pop());
 console.log('myStack: ', myStack.stack);
 console.log('myStack clear: ', myStack.clear());
 console.log('myStack: ', myStack.stack);
+
