@@ -33,7 +33,7 @@ fetch(API_URL + "movies")
       output.innerText = ":(";
     }
   )
-  .catch((err) => {
+  .catch((err) => { // Rejection handler
     console.warn("03: " + "error is : ", err);
     output.innerText = ":(";
   })
