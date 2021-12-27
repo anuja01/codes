@@ -1,0 +1,101 @@
+<script>
+  //map
+  const films = [
+    {
+      title: "Lord of the Rings",
+      releaseDate: "Today",
+    },
+    {
+      title: "The Hobbit",
+      releaseDate: "Tomorrow",
+    },
+    {
+      title: "Fury",
+      releaseDate: "The day after tomorrow",
+    },
+  ];
+
+  const filmNameList = films.map((film) => film.title);
+  console.log("Films: ", films); // original array is not effected
+  console.log("Film Name List: ", filmNameList); // new array with result is returned
+
+  // reduce
+  const videos = [
+    {
+      title: "I had an Angel",
+      viewCount: 100,
+    },
+    {
+      title: "Darkness",
+      viewCount: 1500,
+    },
+    {
+      title: "Ever felt",
+      viewCount: 400,
+    },
+  ];
+
+  const totalViews = videos.reduce((count, video) => {
+    return count + video.viewCount;
+  }, 0); //  0 is the initial value for precedence
+
+  console.log("Videos: ", videos);
+  console.log("View Count: ", totalViews);
+
+  //filter
+  const cars = [
+    {
+      model: "Corolla",
+      brand: "Toyota",
+    },
+    {
+      model: "Civic",
+      brand: "Honda",
+    },
+    {
+      model: "Yaris",
+      brand: "Toyota",
+    },
+    {
+      model: "Octavia",
+      brand: "Skoda",
+    },
+  ];
+
+  const toyotaCars = cars.filter((car) => car.brand === "Toyota");
+  console.log("Car List", cars);
+  console.log("Toyota Cars: ", toyotaCars); // return elements which satisfies the condidion
+
+  //forEach
+  const countries = [
+    {
+      name: "Sweden",
+      rank: 1,
+    },
+    {
+      name: "Canada",
+      rank: 2,
+    },
+    {
+      name: "Australia",
+      rank: 3,
+    },
+  ];
+  
+  // forEach will not return anything
+  // it is necessary to define another array and push to it.
+  // blow code will not work
+  /*
+  const withImpression = countries.forEach((country) => {
+      country.impression = "Good";
+  })
+    console.log('withImpression: ', withImpression);// withImpression is empty here
+  */
+
+  const withImpression = [];
+  countries.forEach((country) => {
+    withImpression.push({ ...country, impression: "Good" });
+  });
+  console.log("withImpression: ", withImpression); 
+  console.log("countries: ", countries);
+</script>
