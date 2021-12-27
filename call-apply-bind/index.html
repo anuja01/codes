@@ -1,0 +1,62 @@
+<script>
+// call(), apply(), bind() is used to couple a function with an object.
+// you can call the function, as if it belongs to that object.
+
+//call()
+const movies = {
+  favourite: "Loard of the Rings",
+  popular: "The Hobbit",
+  getAllMovies: function () {
+      console.log(`Movies are ${this.favourite} and ${this.popular}`)
+  },
+};
+
+function printMovies (user) {
+   this.getAllMovies()
+   console.log(this.favourite);
+   console.log(`parameter: ${user}`);
+}
+// function is immediately called.
+// has access to properties and methods of coupled object
+printMovies.call(movies, "Anuja"); 
+
+//apply()
+const tvSeries = {
+  favourite: "Sillicon Velly",
+  popular: "The Hacker",
+  getAllTvSeries: function () {
+      console.log(`TV series are ${this.favourite} and ${this.popular}`)
+  },
+};
+
+function printTvSeries (user) {
+  console.log(arguments)
+   this.getAllTvSeries()
+   console.log(this.favourite);
+   console.log(`parameter: ${user}`);
+}
+// function is immediately called.
+// has access to properties and methods of coupled object
+// arguments are passed as array
+printTvSeries.apply(tvSeries, ["Anuja Ulpathakumbura"]);
+
+//bind()
+const cars = {
+  favourite: "Corolla",
+  popular: "Golf",
+  getAllCars: function () {
+      console.log(`Cars are ${this.favourite} and ${this.popular}`)
+  },
+};
+
+function printCars (user) {
+  console.log(arguments)
+   this.getAllCars()
+   console.log(this.favourite);
+   console.log(`parameter: ${user}`);
+}
+// function will not invoke immediately
+const printMyCars = printCars.bind(cars);
+
+printMyCars("Anuja Ulpathakumbura in Sweden")
+</script>
