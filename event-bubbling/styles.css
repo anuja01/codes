@@ -1,0 +1,19 @@
+.container {
+    border: 10px solid greenyellow;
+    font-size: 32px;
+    padding: 40px;
+    cursor: pointer;
+}
+
+ul {
+    margin: 0 auto;
+    list-style-type: none;
+    width: 20vw;
+    border: 5px solid red;
+}
+
+li {
+    margin: 40px;
+    border:  1px solid black;
+    text-align: center;
+}
