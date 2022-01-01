@@ -33,3 +33,9 @@ wrapper.addEventListener(
 containerBubble.addEventListener('click', (e) => {
   console.log('clicked list item: ', e.target)
 })
+
+// Web APIs
+// setInterval()
+// setTimeout()
+// Fetch API
+// XMLHttpRequest

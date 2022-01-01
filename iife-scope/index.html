@@ -1,0 +1,40 @@
+<script>
+  // below function will print 6 always because by the time console.log executes i is already 6.
+  // every iteration is reffering to the same i
+
+  function timeOutWithoutBlockedScope() {
+    for (var i = 1; i <= 5; i++) {
+      setTimeout(function () {
+        console.log("i: ", i);
+        console.log("\n");
+      }, i * 1000);
+    }
+  }
+
+  timeOutWithoutBlockedScope();
+
+  // there are two ways we can overcome this by achieving blocked scope
+  //1. let keyword - let will create
+  function timeOutWithBlockedScopeLet() {
+    for (let j = 1; j <= 5; j++) {
+      setTimeout(function () {
+        console.log("j: ", j);
+        console.log("\n");
+      }, j * 1000);
+    }
+  }
+  timeOutWithBlockedScopeLet();
+
+  //2. IIFE is the other option. IIFE will create it's own scope
+  function timeOutWithBlockedScopeIIFE() {
+    for (var k = 1; k <= 5; k++) {
+      (function (k) {
+        setTimeout(function () {
+          console.log("k: ", k);
+          console.log("\n");
+        }, k * 1000);
+      })(k);
+    }
+  }
+  timeOutWithBlockedScopeIIFE();
+</script>
